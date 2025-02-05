@@ -30,7 +30,7 @@ function Home() {
     return (
         <Container className="mt-5">
             <h1 className="text-center mb-4">To Do List</h1>
-            
+
             <ListGroup className="mb-4">
                 {tasks.map((t, index) => (
                     <ListGroup.Item key={index}>{t}</ListGroup.Item>
@@ -87,7 +87,12 @@ function Home() {
                                 />
                             </Form.Group>
 
-                            <Button variant="primary" type="submit" disabled={loading}>
+                            <Button
+                                variant="primary"
+                                type="submit"
+                                disabled={loading}
+                                aria-label={loading ? "Sending task" : "Create task"}
+                            >
                                 {loading ? 'Sending...' : 'Create Task'}
                             </Button>
                         </Form>
